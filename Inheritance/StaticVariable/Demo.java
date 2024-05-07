@@ -1,6 +1,7 @@
 
 
-/*
+/*  
+    - Static variable stored in Heap Memory
     - Static Variable value remain same for all instances
     - Static Variable can be accessed using class name
     - Change in static variable for one instance result in change in all instances
