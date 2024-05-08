@@ -8,6 +8,10 @@
 
     - We cannot call instance method or access instance variable inside static
       method
+    - We can call instance method or access instance variable inside static
+      method only using object of class
+    
+
 */
 
 public class Demo {
