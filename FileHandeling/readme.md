@@ -19,12 +19,13 @@
 
 ```
  * File object provides method createNewFile() to create new file
+ * File object also provides method mkdir() to create a directory
  * if file does not exist it creates file and if it exists it does nothing
 
 ```java
 
     f.createNewFile();
-
+    // f.mkdir()
 ```
 #### 3 Constructors of File Class
 - Only One argument is passed
