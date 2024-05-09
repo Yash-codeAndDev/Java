@@ -99,5 +99,6 @@
         File f = new File(filename);
         FileWriter fw = new FileWriter(f, true);
     ```
-    > **Note:** If specified file is not present these file will be created automatically
+    > [!Note] 
+    >If specified file is not present these file will be created automatically
     
