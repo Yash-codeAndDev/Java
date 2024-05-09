@@ -59,3 +59,44 @@
 
         File f = new File( f1 ,'abc.txt');
         ```
+
+## FileWriter
+
+* FileWriter : The FileWriter class in Java is used for writing character data to files. It is part of the Java I/O (Input/Output) classes and is specifically designed for writing text data to files.
+
+* FileWriter Constructors
+    1. File name is directly passed as arguments
+    ```java
+        /*
+            FileWriter fw = new FileWriter(String filename)
+        */
+        String filename = 'abc.txt';
+        FileWriter fw = new FileWriter(filename);
+    ```
+    2. File class object is passed as arguments
+    ```java
+        /*
+            FileWriter fw = new FileWriter(File f)
+        */
+        String filename = 'abc.txt';
+        File f = new File(filename);
+        FileWriter fw = new FileWriter(f);
+    ```
+    3. File name and boolean value is passed signifying writing file in append mode if value is True else overwrites the file if value is False.
+    ```java
+        /*
+            FileWriter fw = new FileWriter(String filename, boolean append)
+        */
+        String filename = 'abc.txt';
+        FileWriter fw = new FileWriter(filename, true);
+    ```
+    4.  3. File object and boolean value is passed signifying writing file in append mode if value is True else overwrites the file if value is False.
+    ```java
+        /*
+            FileWriter fw = new FileWriter(File f, boolean append)
+        */
+        String filename = 'abc.txt';
+        File f = new File(filename);
+        FileWriter fw = new FileWriter(f, true);
+    ```
+    
