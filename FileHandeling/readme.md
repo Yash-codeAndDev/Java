@@ -90,7 +90,7 @@
         String filename = 'abc.txt';
         FileWriter fw = new FileWriter(filename, true);
     ```
-    4.  3. File object and boolean value is passed signifying writing file in append mode if value is True else overwrites the file if value is False.
+    4. File object and boolean value is passed signifying writing file in append mode if value is True else overwrites the file if value is False.
     ```java
         /*
             FileWriter fw = new FileWriter(File f, boolean append)
@@ -99,4 +99,6 @@
         File f = new File(filename);
         FileWriter fw = new FileWriter(f, true);
     ```
+    - [!Note]
+    - If specified file is not present these file will be created automatically
     
