@@ -26,18 +26,35 @@
     f.createNewFile();
 
 ```
-> [!3 Constructors of File Class]
+#### 3 Constructors of File Class
 - Only One argument is passed
     - Creating File object to represent directory or file in given pathname  
-    - generally used to represent file in current working directory 
+    - Generally used to represent file in current working directory 
     ``` java
-        <!-- File f = new File(String pathname); -->
+        /*
+            File f = new File(String pathname);
+        */
         String pathname = "abc";
         File f = new File(pathname);
     ```
-- 2 Argument is Passed
-    - Creating File object to represent directory or file in given  sub-directory
-    - ``` java
-        <!--File f = new File(String subdir,String filename);  -->
+- Two Arguments are Passed
+    1. Type 1
+        - Creating File object to represent directory or file in given sub-directory
+    ``` java
+        /*
+            File f = new File(String subdir,String filename);
+        */
+
         File f = new File('subdirectory','abc.txt');
     ```
+    2. Type 2
+        - Creating File object to represent directory or file in another file object reference
+
+        ``` java
+        /*
+            File f = new File(File f1,String filename);
+        */
+        File f1 = new File('fold1');
+
+        File f = new File( f1 ,'abc.txt');
+        ```
