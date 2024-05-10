@@ -128,5 +128,5 @@
         ```
 >[!Note]
 > Limitations of FileReader and FileWriter:
-> We can only read data character by character and not line by line
-> While writing data we have to insert line separator manually which varies form system to system   
+> 1) We can only read data character by character and not line by line
+> 2) While writing data we have to insert line separator manually which varies form system to system   
