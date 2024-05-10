@@ -24,7 +24,6 @@ public class Demo2 {
             String content = new String(buffer,0,charRead);
             System.out.print(content);
         }
-
         fr.close();
     }    
 }
