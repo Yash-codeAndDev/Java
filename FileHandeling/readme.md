@@ -127,6 +127,6 @@
             FileReader fr = new FileReader(f);
         ```
 >[!Note]
->Limitations of FileReader and FileWriter:
->We can only read data character by character and not line by line
->While writing data we have to insert line separator manually which varies form system to system   
+> Limitations of FileReader and FileWriter:
+> We can only read data character by character and not line by line
+> While writing data we have to insert line separator manually which varies form system to system   
