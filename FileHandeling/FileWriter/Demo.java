@@ -23,6 +23,8 @@ public class Demo {
         
         *   write(String str,int start,int len)
             writes a portion of the string starting from index start (inclusive) with a length of len characters.
+
+            return type of write is void
         */
 
         fw.write("Learning Java\nFile Handeling in java\n");
