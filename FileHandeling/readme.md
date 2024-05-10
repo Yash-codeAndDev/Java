@@ -101,4 +101,28 @@
         ```
 > [!Note] 
 >If specified file is not present these file will be created automatically
-    
+
+
+
+## FileReader
+
+* The FileReader class in Java is used for reading character data from files. It is part of the Java I/O (Input/Output) library and is specifically designed for reading text files.
+
+* FileReader Constructors
+    1. File name is directly passed as arguments
+        ```java
+            /*
+                FileReader fr= new FileReader(String filename)
+            */
+            String filename = 'abc.txt';
+            FileReader fr = new FileReader(filename);
+        ```
+    2. File class object is passed as arguments
+        ```java
+            /*
+                FileReader fr = new FileReader(File f)
+            */
+            String filename = 'abc.txt';
+            File f = new File(filename);
+            FileReader fr = new FileReader(f);
+        ```
