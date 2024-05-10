@@ -22,6 +22,7 @@ public class Demo {
             System.out.print((char)i);
             i = fr.read();
         }
+        
         fr.close();
     }    
 }
