@@ -19,6 +19,9 @@ public class Demo2 {
             System.out.print((char)i);
             i= br.read();
         }
-        br.close();
+
+        /*
+         * We do not need to closr br because it will be  closed automatically 
+        */
     }
 }
