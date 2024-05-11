@@ -22,6 +22,8 @@ public class Demo2 {
 
         /*
          * We do not need to closr br because it will be  closed automatically 
+         * but it is good practice to manually close it
         */
+        br.close();
     }
 }
