@@ -4,7 +4,7 @@ import java.io.FileReader;
 import java.io.File;
 
 
-public class Demo {
+public class Demo2 {
 
     public static void main(String[] args) throws IOException {
 
@@ -14,10 +14,10 @@ public class Demo {
 
         BufferedReader br = new BufferedReader(fr);
 
-        String line = br.readLine();
-        while(line != null){
-            System.out.println(line);
-            line = br.readLine();
+        int i = br.read();
+        while( i != -1){
+            System.out.print((char)i);
+            i= br.read();
         }
         br.close();
     }
