@@ -164,7 +164,7 @@ The buffer size may be specified, or the default size may be accepted
 > [!Note]
 >    1) We cannot directly communitate or with files directly. It can commumicate via some  writer orbject only
 >    2) If we want to open file in append mode just we just need to pass file writer object created in append mode 
->```java
+```java
     File f = new File("abc.txt",true);
 
     FileWriter fw = new FileWriter(f)
