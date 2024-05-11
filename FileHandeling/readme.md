@@ -250,3 +250,5 @@ The buffer size may be specified, or the default size may be accepted
             FileWriter fw = new FileWriter("abc.txt")
             PrintWriter pw = new PrintWriter(fw)
         ```
+>[!Note]
+> PrintWriter can directly communicate with file and can communicate via some writer object also
