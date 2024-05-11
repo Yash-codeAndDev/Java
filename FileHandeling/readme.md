@@ -130,3 +130,44 @@
 > Limitations of FileReader and FileWriter:
 > 1) We can only read data character by character and not line by line
 > 2) While writing data we have to insert line separator manually which varies form system to system   
+
+## BufferedWriter
+
+* Writes text to a character-output stream, buffering characters so as to provide for the efficient writing of single characters, arrays, and strings.
+The buffer size may be specified, or the default size may be accepted
+
+* Constructors :
+    1) Only writer object is Passed
+        ```java
+            /*
+                BufferedWriter(writer f)
+            */
+
+            File f = new File("abc.txt");
+
+            FileWriter fw = new FileWriter(f)
+
+            BufferedWriter bw = new BufferedWriter(fw);
+
+        ```
+    2) Writer object along with buffer size are Passed
+    
+        ```java
+            /*
+                BufferedWriter(writer f, int bufferSize)
+            */
+            FileWriter fw = new FileWriter('abc.txt')
+
+            BufferedWriter bw = new BufferedWriter(fw);
+
+        ```
+> [!Note]
+>    1) We cannot directly communitate or with files directly. It can commumicate via some  writer orbject only
+>    2) If we want to open file in append mode just we just need to pass file writer object created in append mode
+```java
+    File f = new File("abc.txt",true);
+
+    FileWriter fw = new FileWriter(f)
+
+    BufferedWriter bw = new BufferedWriter(fw);
+``` I
