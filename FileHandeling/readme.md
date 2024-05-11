@@ -164,10 +164,46 @@ The buffer size may be specified, or the default size may be accepted
 > [!Note]
 >    1) We cannot directly communitate or with files directly. It can commumicate via some  writer orbject only
 >    2) If we want to open file in append mode just we just need to pass file writer object created in append mode 
-```java
-    File f = new File("abc.txt",true);
+*    ```java
 
-    FileWriter fw = new FileWriter(f)
+        File f = new File("abc.txt",true);
 
-    BufferedWriter bw = new BufferedWriter(fw);
-``` I
+        FileWriter fw = new FileWriter(f);
+
+        BufferedWriter bw = new BufferedWriter(fw);
+    
+    ``` I
+
+## BufferedReader
+
+* Java BufferedReader class is used to read the text from a character-based input stream. It can be used to read data line by line as well as character by character.
+
+* Constructors :
+    1) Only writer object is Passed
+        ```java
+            /*
+                BufferedReader(Reader f)
+            */
+
+            File f = new File("abc.txt");
+
+            FileReader fw = new FileReader(f)
+
+            BufferedReader bw = new BufferedReader(fw);
+
+        ```
+    2) Writer object along with buffer size are Passed
+    
+        ```java
+            /*
+                BufferedReader(Reader f, int bufferSize)
+            */
+            File f = new File("abc.txt");
+
+            FileReader fw = new FileReader(f)
+
+            BufferedReader bw = new BufferedReader(fw, buffersize);
+
+        ```
+> [!Note]
+>    1) We cannot directly communitate or with files directly. It can commumicate via some  reader orbject
