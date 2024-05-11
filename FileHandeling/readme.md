@@ -209,3 +209,44 @@ The buffer size may be specified, or the default size may be accepted
         ```
 > [!Note]
 >    1) We cannot directly communitate or with files directly. It can commumicate via some  reader object
+>    2) In BufferWriter and FileWriter we cannot write any primitive data to write them we have to pass them in "" eg . bw.write("100") therefore to overcome this limitation PrintWriter class is used 
+
+## Print Writer
+
+* PrintWriter is a class used for writing character data to file.
+* Main advantage of PrintWriter over BufferWriter and FileWriter is we can write any primitive data directly to file.
+
+
+* Constructors :
+    1) Directly write over file
+        
+        * Passing filename to PrintWriter object
+
+        ```java
+
+            /*
+                PrintWriter pw = new PrintWriter(String filename)
+            */
+
+            PrintWriter pw = new PrintWriter("abc.txt")
+        ```
+
+        * Passing file object 
+        
+        ```java
+
+            /*
+                PrintWriter pw = new PrintWriter(File fobj)
+            */
+            File f = new File("abc.txt")
+            PrintWriter pw = new PrintWriter(f)
+        ```
+    2) Write with help of Writer Object
+    
+        ```java
+            /*
+                PrintWriter pw = new PrintWriter(Writer wobj)
+            */
+            FileWriter fw = new FileWriter("abc.txt")
+            PrintWriter pw = new PrintWriter(fw)
+        ```
