@@ -261,7 +261,7 @@ The buffer size may be specified, or the default size may be accepted
 * To make a Java object serializable we implement the java.io.Serializable interface.
 * For serializing the object, we call the writeObject() method of ObjectOutputStream class, and for deserialization we call the readObject() method of ObjectInputStream class.
 
-    '''java
+    ```java
         
         class Dog implements Serializable {
             int age;
@@ -292,4 +292,4 @@ The buffer size may be specified, or the default size may be accepted
                 System.out.println(d2.Breed+" "+d2.name+" "+d2.age);
             }   
         }
-'''
+    ```
