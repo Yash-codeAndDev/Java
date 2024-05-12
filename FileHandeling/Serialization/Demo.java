@@ -32,5 +32,6 @@ public class Demo{
         Dog d2 = (Dog)ois.readObject(); // reading object form file
 
         System.out.println(d2.Breed+" "+d2.name+" "+d2.age);
+    
     }   
 }
