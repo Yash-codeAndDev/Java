@@ -262,7 +262,7 @@ The buffer size may be specified, or the default size may be accepted
 * For serializing the object, we call the writeObject() method of ObjectOutputStream class, and for deserialization we call the readObject() method of ObjectInputStream class.
 
     ```java
-        
+                
         class Dog implements Serializable {
             int age;
             String name;
@@ -276,20 +276,22 @@ The buffer size may be specified, or the default size may be accepted
         }
 
         public class Demo{
-            public static void main(String[] args) throws Exception{
+            public static void main(String[] args) throws Exception
+            {
                 
                 Dog dobj = new Dog(5, "Oscar", "German Sephard");
 
                 // Serialization
                 FileOutputStream fos = new FileOutputStream("abc.ser");
                 ObjectOutputStream oos = new ObjectOutputStream(fos);
-                oos.writeObject(dobj);
+                oos.writeObject(dobj); // writing object to file 
             
+                // Deserialization
                 FileInputStream fis = new FileInputStream("abc.ser");
                 ObjectInputStream ois = new ObjectInputStream(fis);
-                
-                Dog d2 = (Dog)ois.readObject();
+                Dog d2 = (Dog)ois.readObject(); // reading object form file
+
                 System.out.println(d2.Breed+" "+d2.name+" "+d2.age);
-            }   
-        }
+            }
+        }   
     ```
