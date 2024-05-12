@@ -295,7 +295,7 @@ The buffer size may be specified, or the default size may be accepted
             }
         }   
     ```
-* Preventing sensitive information (like password) to be written on file. To do this we make the object variable transient.
+* Preventing sensitive information (like password) to be written on file. To do this we make the object variable transient.Therefore default value of data is saved in file.
 
     ```java
         class UserDetails implements Serializable 
