@@ -330,3 +330,7 @@ The buffer size may be specified, or the default size may be accepted
             }   
         }
     ```
+>[!Note]
+>    1) Static variable will not participate in serialization as it not part of object state and serialization is applicable of object.
+>   2) Final variable is initialized at compile time therefore Final variable will participate in serialization directly by value . Hence declaring final variable as transient there is no impact.
+
