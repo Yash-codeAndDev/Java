@@ -334,4 +334,33 @@ The buffer size may be specified, or the default size may be accepted
 >   1) Static variable will not participate in serialization as it not part of object state and serialization is applicable of object.
 >   2) Final variable is initialized at compile time therefore Final variable will participate in serialization directly by value . Hence declaring final variable as transient there is no impact.
 >   3) We can serialize any number of objects in a file but during deserialization we have to deserialize them in same order.
-     
+    ```java
+        D4_A obj1 = new D4_A(10);
+        D4_B obj2 = new D4_B(20);
+        D4_C obj3 = new D4_C(30);
+        
+        FileOutputStream fos = new FileOutputStream("abc4.ser");
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+
+        oos.writeObject(obj1);
+        oos.writeObject(obj2);
+        oos.writeObject(obj3);
+
+        
+        FileInputStream fis = new FileInputStream("abc4.ser");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        
+        /*        
+            D4_C d3 = (D4_C)ois.readObject(); 
+            D4_A d1 = (D4_A)ois.readObject();
+            D4_B d2 = (D4_B)ois.readObject();
+            
+            Error java.lang.ClassCastException
+        */
+        D4_A d1 = (D4_A)ois.readObject();
+        D4_B d2 = (D4_B)ois.readObject();
+        D4_C d3 = (D4_C)ois.readObject();
+
+        System.out.println(d1.a+" "+d2.b+" "+d3.c);    
+    ```
+>   
