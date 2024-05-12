@@ -252,3 +252,44 @@ The buffer size may be specified, or the default size may be accepted
         ```
 >[!Note]
 > PrintWriter can directly communicate with file and can communicate via some writer object also
+
+
+# Serialization
+
+* Serialization in Java is a mechanism of writing the state of an object into a byte-stream. This mechanism serves to persist the object's state.
+* The reverse operation of serialization is called deserialization where byte-stream is converted into an object
+* To make a Java object serializable we implement the java.io.Serializable interface.
+* For serializing the object, we call the writeObject() method of ObjectOutputStream class, and for deserialization we call the readObject() method of ObjectInputStream class.
+
+    '''java
+        
+        class Dog implements Serializable {
+            int age;
+            String name;
+            String Breed;
+
+            public Dog(int age,String name, String Breed){
+                this.age = age;
+                this.name = name;
+                this.Breed = Breed;
+            }
+        }
+
+        public class Demo{
+            public static void main(String[] args) throws Exception{
+                
+                Dog dobj = new Dog(5, "Oscar", "German Sephard");
+
+                // Serialization
+                FileOutputStream fos = new FileOutputStream("abc.ser");
+                ObjectOutputStream oos = new ObjectOutputStream(fos);
+                oos.writeObject(dobj);
+            
+                FileInputStream fis = new FileInputStream("abc.ser");
+                ObjectInputStream ois = new ObjectInputStream(fis);
+                
+                Dog d2 = (Dog)ois.readObject();
+                System.out.println(d2.Breed+" "+d2.name+" "+d2.age);
+            }   
+        }
+'''
