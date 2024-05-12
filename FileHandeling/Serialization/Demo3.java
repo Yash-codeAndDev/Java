@@ -30,11 +30,11 @@ public class Demo3{
         User3 uobj = new User3("YashCodeAndDev","abcde123","yash23@gmail.com");
 
         // Serialization
-        FileOutputStream fos = new FileOutputStream("abc2.ser");
+        FileOutputStream fos = new FileOutputStream("abc3.ser");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(uobj);
     
-        FileInputStream fis = new FileInputStream("abc2.ser");
+        FileInputStream fis = new FileInputStream("abc3.ser");
         ObjectInputStream ois = new ObjectInputStream(fis);
         
         User3 d2 = (User3)ois.readObject();
