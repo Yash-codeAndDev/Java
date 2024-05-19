@@ -426,7 +426,9 @@ The buffer size may be specified, or the default size may be accepted
 
 ## Serialization in Inheritance
 
-* If Parent class implements serializable and child class will automatically also implements serializable.
+* If Parent class implements serializable and even though child class does not implements serializable we can serialize child class object i.e Serializable nature is inherited form parent to child class.
+>[!Note] 
+> If parent is Serializable then every child class object is also serializable
 
 ```java
     class A implements Serializable
