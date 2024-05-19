@@ -6,13 +6,13 @@ public class Demo {
         
         PrintWriter pw = new PrintWriter("abc.txt");
 
-        // Writing nornal character data
+        // Writing normal character data
         pw.write("Hello , How are You ?");
 
         // write data and add newline automatically
         pw.println("My name is Yash Khati");
 
-        // writing Primitive dat
+        // writing Primitive data
         pw.write(100); // converts to d
         pw.println(100); 
         pw.print('A');
