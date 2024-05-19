@@ -424,7 +424,7 @@ The buffer size may be specified, or the default size may be accepted
     }
 ```
 
-## Serialization in Ihneritance
+## Serialization in Inheritance
 
 * If Parent class implements serializable and child class will automatically also implements serializable.
 
