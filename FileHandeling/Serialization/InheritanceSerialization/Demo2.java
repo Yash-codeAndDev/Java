@@ -1,8 +1,3 @@
-/*
- 2 type of inheritance inheritance
- Case 1:
- */
-
  import java.io.FileOutputStream;
  import java.io.FileInputStream;
  import java.io.IOException;
