@@ -253,6 +253,37 @@ The buffer size may be specified, or the default size may be accepted
 >[!Note]
 > PrintWriter can directly communicate with file and can communicate via some writer object also
 
+```java        
+    public class Demo {
+        public static void main(String[] args) throws IOException {
+            
+            PrintWriter pw = new PrintWriter("abc.txt");
+
+            // Writing normal character data
+            pw.write("Hello , How are You ?");
+
+            // write data and add newline automatically
+            pw.println("My name is Yash Khati");
+
+            // writing Primitive data
+            pw.write(100); // converts to d
+            pw.println(100); 
+            pw.print('A');
+            pw.print(22);
+            pw.println('c');
+            
+        /*
+        Output
+        Hello , How are You ?My name is Yash Khati
+        d100
+        A22c
+        */
+
+            pw.flush();
+            pw.close();
+        }
+    }
+```
 
 # Serialization
 
