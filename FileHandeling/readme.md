@@ -422,4 +422,41 @@ The buffer size may be specified, or the default size may be accepted
             System.out.println("Username : "+obj2.username +"\t Password "+obj2.password+"\t Pin : "+obj2.pin+"\t cvv :"+obj2.cvv);
         }    
     }
-    ```
+```
+
+## Serialization in Ihneritance
+
+* If Parent class implements serializable and child class will automatically also implements serializable.
+
+```java
+    class A implements Serializable
+    {
+        String name = "Yash";
+        int age = 22;
+    }
+
+    class B extends A{
+        int univ = 201317;
+    }
+
+    public class Demo {
+
+        public static void main(String[] args) throws Exception {
+            
+            B obj = new B();
+            System.out.println("name : "+obj.name+" age : "+obj.age+" univ : "+ obj.univ);
+            
+            FileOutputStream fos = new FileOutputStream("Demo.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(obj);
+
+            FileInputStream fis = new FileInputStream("Demo.ser");
+            ObjectInputStream ois  = new ObjectInputStream(fis);
+            
+            B obj2= (B)ois.readObject();
+
+            System.out.println("name : "+obj2.name+" age : "+obj2.age+" univ : "+ obj2.univ);
+            
+        }    
+    }
+```
