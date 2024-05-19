@@ -364,4 +364,62 @@ The buffer size may be specified, or the default size may be accepted
 
         System.out.println(d1.a+" "+d2.b+" "+d3.c);    
 ```
->   
+## Customized Serialization
+
+* Transient fields are not serialized by default. If these fields need to be serialized in a custom manner (e.g., by applying encryption), you need to provide custom serialization logic.
+
+* Customized serialization in Java is achieved by providing custom implementations of the writeObject and readObject methods within the class that implements Serializable. These methods allow you to define exactly how an object's state should be written to and read from the serialization stream.
+
+```java
+        
+    class Account2 implements Serializable 
+    {
+        String username = "Yash Khati";
+        transient String password = "Yash@123";
+        transient int pin = 2233;
+        transient int cvv = 221;
+
+        private void writeObject(ObjectOutputStream os) throws Exception{
+            os.defaultWriteObject();
+
+            String encryptPassword = "123"+password;
+            os.writeObject(encryptPassword);
+
+            int epin = 105+ pin;
+            os.writeInt(epin);
+            
+            int ecvv = 102+cvv;
+            os.writeInt(ecvv);
+        }
+        private void readObject(ObjectInputStream is) throws Exception{
+            is.defaultReadObject();
+            String epswd = (String) is.readObject(); 
+            password = epswd.substring(3); 
+
+            int epin = is.readInt();
+            pin = epin - 105;
+
+            int dcvv = is.readInt();
+            cvv = dcvv - 102;
+        }
+    }
+
+    public class Demo2 
+    {
+        public static void main(String[] args) throws Exception {            
+            Account2 obj = new Account2();
+            System.out.println("Username : "+obj.username +"\t Password : "+obj.password+"\t Pin :"+obj.pin+"\t cvv :"+obj.cvv);
+
+            FileOutputStream fos = new FileOutputStream("Demo2.ser");
+            ObjectOutputStream oos = new ObjectOutputStream(fos);
+            oos.writeObject(obj);
+
+
+            FileInputStream fis = new FileInputStream("Demo2.ser");
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Account2 obj2 = (Account2)ois.readObject();
+
+            System.out.println("Username : "+obj2.username +"\t Password "+obj2.password+"\t Pin : "+obj2.pin+"\t cvv :"+obj2.cvv);
+        }    
+    }
+    ```
