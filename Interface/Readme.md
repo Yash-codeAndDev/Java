@@ -5,7 +5,7 @@
 
 ## Important Points
 
-* Class implementing Intraface should provide definition to all the function derived from intraface. If we do not provide definition to all the methods we get Compile Time Error
+1. Class implementing Intraface should provide definition to all the function derived from intraface. If we do not provide definition to all the methods we get Compile Time Error
 
 ```java
     interface Test {
