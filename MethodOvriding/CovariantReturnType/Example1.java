@@ -1,4 +1,4 @@
-package MethodOvriding.CovariantReturnType;
+// package MethodOvriding.CovariantReturnType;
 
 class A {
 }
