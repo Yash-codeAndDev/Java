@@ -176,3 +176,89 @@ The Class extending Abstract will have to provide definition to functions which 
         }
     }
 ```
+5. We can implement multiple interface simultaneouusly using a class provided the implemented interfaces does not contains method of same signature but different return type.
+
+```java
+    interface A {
+        void m1();
+    }
+
+    interface B {
+        int m1();
+    }
+
+    class Demo implements A,B{
+
+        public void m1(){
+            System.out.println("Hello void m1()");
+        }
+        public int m1(){
+            System.out.println("Hello int m1()");
+            return 1;
+        }
+        public static void main(String[] args) 
+        {
+            System.out.println("Demo implements A and B");
+        }
+    }
+    /*
+        error: method m1() is already defined in class Demo
+        public int m1(){
+                ^
+        error: Demo is not abstract and does not override abstract method m1() in B
+        class Demo implements A,B{
+        ^
+        error: m1() in Demo cannot implement m1() in B
+        public void m1(){
+                    ^
+        return type void is not compatible with int
+    */
+```
+*   if the implemented interface have same method signature and same return  type no error occurs
+```java
+    interface A {
+        void m1();
+    }
+
+    interface B {
+        void m1();
+    }
+
+    class Demo implements A,B{
+
+        public void m1(){
+            System.out.println("Hello m1()");
+        }
+        
+        public static void main(String[] args) 
+        {
+            System.out.println("Demo implements A and B");
+        }
+    }
+``` 
+* if we havae same variable name in implemented interfaces and we are not using it in the class which implements interfaces we will not get any error but if we use the variable we will get complie time error
+
+```java
+    interface C {
+        int a = 10;
+    }
+
+    interface D {
+        int a = 20;
+    }
+
+    class Demo2 implements C,D{
+    
+        public static void main(String[] args) 
+        {
+            System.out.println("Demo2 implements A and B");
+            // System.out.println(a); error
+        }
+    }
+    /*
+        error: reference to a is ambiguous
+        System.out.println(a);
+                           ^
+        both variable a in C and variable a in D match
+    */
+```
