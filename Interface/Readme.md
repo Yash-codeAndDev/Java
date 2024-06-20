@@ -126,3 +126,53 @@ The Class extending Abstract will have to provide definition to functions which 
         attempting to assign weaker access privileges; was public
     */
 ```
+4. Interface variable are by default public, static and final.
+    * It is compulsory to initialize the variables in interface at time of declaration only.
+```java
+    interface A{
+        int a ;
+    }
+    public class Demo implements A {
+        public static void main(String[] args) {
+            System.out.println("Demo class");
+        }
+    }
+    /*
+        error: = expected
+        int a ;
+            ^
+    */
+```
+```java
+    interface A{
+    private int a = 10 ;
+    }
+    public class Demo implements A {
+        public static void main(String[] args) {
+            System.out.println("Demo class");
+        }
+    }
+    /*
+        error: modifier private not allowed here
+        private int a = 10 ;
+                    ^
+    */
+```
+```java
+    interface A{
+        int a = 10 ; // by default public static final
+    }
+
+    public class Demo implements A {
+        public static void main(String[] args) {
+            System.out.println("Demo class");
+            System.out.println(a);
+            /*
+            // a = 23; 
+                error: cannot assign a value to final variable a
+                a = 23;
+                ^  
+            */
+        }
+    }
+```
