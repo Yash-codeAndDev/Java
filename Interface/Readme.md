@@ -252,7 +252,7 @@ The Class extending Abstract will have to provide definition to functions which 
         public static void main(String[] args) 
         {
             System.out.println("Demo2 implements A and B");
-            // System.out.println(a); error
+            System.out.println(a); error
         }
     }
     /*
