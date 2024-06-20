@@ -71,3 +71,58 @@ The Class extending Abstract will have to provide definition to functions which 
         }
     } 
 ```
+
+3. Methods in interface are by default public and abstract.
+    * Class implementing interface while defining these functions should make these functions visibility as public
+
+```java
+    interface A{
+        void m1(); // by default abstract and public
+        void m2();
+    }
+    public class Demo implements B {
+        public void m1(){
+            System.out.println("m1() defined");
+        }
+        public void m2(){
+            System.out.println("m2() defined");
+        }
+        public static void main(String[] args) {
+            System.out.println("Demo class");
+            Demo obj = new Demo();
+            obj.m1();
+            obj.m2();
+        }
+    }
+```
+
+```java
+    interface A{
+        void m1(); // by default abstract and public
+        void m2();
+    }
+
+    public class Demo implements A {
+
+        public void m1(){
+            System.out.println("m1() defined");
+        }
+        
+        void m2(){
+            System.out.println("m2() defined");
+        }
+        
+        public static void main(String[] args) {
+            System.out.println("Demo class");
+            Demo obj = new Demo();
+            obj.m1();
+            obj.m2();
+        }
+    }
+    /*
+        error: m2() in Demo cannot implement m2() in A
+        void m2(){
+            ^
+        attempting to assign weaker access privileges; was public
+    */
+```
