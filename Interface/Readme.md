@@ -1,4 +1,4 @@
-# Intraface
+# Intreface
 
 * 100% Abstract Class
 * Cannot be Instantiated
@@ -73,7 +73,8 @@ The Class extending Abstract will have to provide definition to functions which 
 ```
 
 3. Methods in interface are by default public and abstract.
-    * Class implementing interface while defining these functions should make these functions visibility as public
+    * Class implementing interface while defining these functions should make these functions visibility as public.
+    * Interface Modifiers cannot be declared with modifiers like private, protected, static, synchronized , native, final, strictfp.
 
 ```java
     interface A{
@@ -128,6 +129,7 @@ The Class extending Abstract will have to provide definition to functions which 
 ```
 4. Interface variable are by default public, static and final.
     * It is compulsory to initialize the variables in interface at time of declaration only.
+    * Interface variables cannot have modifiers like private, protected, volatile, transient.
 ```java
     interface A{
         int a ;
@@ -260,5 +262,23 @@ The Class extending Abstract will have to provide definition to functions which 
         System.out.println(a);
                            ^
         both variable a in C and variable a in D match
+    */
+```
+6. We cannot have constructors inside interface.
+```java
+    interface A{
+        A(){
+            System.out.println("Interface Constructor");
+        }
+    }
+    public class Demo {
+        public static void main(String[] args) {
+            System.out.println("Demo Class");   
+        }
+    }
+    /*
+        error: <identifier> expected
+        A(){
+        ^
     */
 ```
