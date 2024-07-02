@@ -9,6 +9,7 @@
 > Promotion Order
 >   * byte → short → int → long → float → double
 >   * char → int
+>   * If there is method overloading with arguments of method as String and Object and null is passed it is promoted to String. 
 
 ```java
 public class Demo {
