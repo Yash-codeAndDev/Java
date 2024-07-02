@@ -15,12 +15,11 @@ public class Demo {
 
     public static void main(String[] args) {
         Demo t = new Demo();
-        t.m1();
-        t.m1(10);
-        t.m1(10l);
-        t.m1(10f);
-        t.m1('a');
-        // t.m1(10.5);
+        t.m1(); // no-args
+        t.m1(10); // int-args
+        t.m1(10l); // float-args
+        t.m1(10f); // float-args
+        t.m1('a'); // int-args
+        // t.m1(10.5); -> Error
     }
-
 }
