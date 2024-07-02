@@ -33,3 +33,21 @@ public class Demo {
     }
 }
 ```
+* In general various argument will get only executed when no other method matched only then var-arg method will run.
+```java
+public class Demo4 {
+    public void m1(int x) {
+        System.out.println("General Method");
+    }
+    public void m1(int... x) {
+        System.out.println("var-args");
+
+    }
+    public static void main(String[] args) {
+        Demo4 t = new Demo4();
+        t.m1(); // var-arg
+        t.m1(10,20); // var-arg
+        t.m1(10); // General
+    }
+}
+```
