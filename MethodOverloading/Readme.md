@@ -7,5 +7,5 @@
 
 >[!Note] 
 > Promotion Order
-> byte → short → int → long → float → double
-> char → int
+ * byte → short → int → long → float → double
+ * char → int
