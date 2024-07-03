@@ -69,7 +69,7 @@ class Demo3{
 }
 ```
 
-* In Method Overloading Method resolution is done by compiler based on Reference Type.
+* In Method Overloading Method resolution is done by compiler based on Reference Type. i.e In overloading run type object will play no role.
 
 ```java
     class Animal{
