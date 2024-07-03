@@ -34,7 +34,7 @@
     }
 ```
 
-# Covarient Return Type
+## Covarient Return Type
 
 > [!Note]
 > Method overriding requires that the overridden method in the subclass must have the same return type as the method in the superclass. However, Java allows a feature called covariant return types, which means the return type of the overriding method can be a subtype of the return type declared in the superclass method.
@@ -72,3 +72,5 @@
         }
     }
 ```
+
+## Modifiers
