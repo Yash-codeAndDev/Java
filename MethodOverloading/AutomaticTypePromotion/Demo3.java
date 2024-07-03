@@ -10,6 +10,6 @@ class Demo3{
         Demo3 obj = new Demo3();
         obj.m1("Yash");
         obj.m1(new StringBuilder("Hello"));
-        // obj.m1(null); ambiguous as StringBuilder and String are both Child Class of Object class
+        // obj.m1(null); //ambiguous as StringBuilder and String are both Child Class of Object class
     }
 }
