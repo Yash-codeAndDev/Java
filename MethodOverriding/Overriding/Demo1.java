@@ -12,15 +12,16 @@ class B extends A{
 public class Demo1 {
 
     public static void main(String[] args) {
+        
         A a1 = new A();
         B b1 = new B();
+        a1.m1(); // A class m1()
+        b1.m1(); // B class m1() 
 
         A a2 = new B();
-        // B b2 = new A();
+        a2.m1(); // B class m1()
 
-        a1.m1();
-        b1.m1();
-        a2.m1();
+        // B b2 = new A(); -> we cannot assign parent object to child class
         // b2.m1();
     }    
 }
