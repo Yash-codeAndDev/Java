@@ -77,6 +77,27 @@
 
 * If Child class throw any checked exception the parent should also throw same checked exception or its parent exception.
 * There are no rule for unchecked exceptions.
+* Valid Method Overriding 
 
-    1) - Parent: public void m1() throws Exception
+    1. - Parent: public void m1() throws Exception
        - Child : public void m1()
+
+    2. - Parent: public void m1() throws Exception
+       - Child : public void m1() throws IOException
+
+    3. - Parent: public void m1() throws IOException
+       - Child : public void m1() throws FileNotFoundException, EOFException
+
+    4. - Parent: public void m1() throws IOException
+       - Child : public void m1() throws ArithmeticException
+
+* Invalid Method Overriding
+
+    1. - Parent: public void m1() 
+       - Child : public void m1() throws Exception
+
+    2. - Parent: public void m1() throws IOException
+       - Child : public void m1() throws Exception
+
+    3. - Parent: public void m1() throws IOException
+       - Child : public void m1() throws InterruptedException
