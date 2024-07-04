@@ -78,5 +78,5 @@
 * If Child class throw any checked exception the parent should also throw same checked exception or its parent exception.
 * There are no rule for unchecked exceptions.
 
-    1) Parent: public void m1() throws Exception 
-       Child : public void m1()
+    1) Parent: public void m1() throws Exception
+    Child : public void m1()
