@@ -73,8 +73,9 @@
     }
 ```
 
-## Modifiers
+## Rules
 
+### Exceptions
 * If Child class throw any checked exception the parent should also throw same checked exception or its parent exception.
 * There are no rule for unchecked exceptions.
 * Valid Method Overriding 
@@ -101,3 +102,22 @@
 
     3. - Parent: public void m1() throws IOException
        - Child : public void m1() throws InterruptedException
+
+### Static method
+* We cannot override Static method as Non-Static.
+```java
+    class P1{
+        public static void m1(){
+        }
+    }
+    class C1 extends P1{
+        public void m1(){
+        }
+    }
+    /*
+        error: m1() in C1 cannot override m1() in P1
+        public void m1(){
+                    ^
+        overridden method is static
+    */
+```
