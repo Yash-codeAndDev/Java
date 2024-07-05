@@ -169,5 +169,5 @@
 
 > [!Note]
 > Method Hiding VS Overriding: 
-> All properties of Method Hiding are same as Method Overriding.
->Difference between Method Overriding and Method Hiding is that In Method Hiding method resolution is taken care by compiler based on reference type but in Method Overriding method resolution is taken care by JVM based on Runtime Object
+> - All properties of Method Hiding are same as Method Overriding.
+> - Difference between Method Overriding and Method Hiding is that In Method Hiding method resolution is taken care by compiler based on reference type but in Method Overriding method resolution is taken care by JVM based on Runtime Object
