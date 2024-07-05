@@ -121,3 +121,32 @@
         overridden method is static
     */
 ```
+* We cannot have overriden method static if overriden method is instance method i.e non static method.
+```java
+    class P2{
+        public void m1(){
+        }
+    }
+    class C2 extends P2{
+        public static void m1(){
+        }
+    }
+    /*
+        m1() in C2 cannot override m1() in P2
+            public static void m1(){
+                            ^
+        overriding method is static
+    */
+```
+* If both Parent and Child class methods are static then we wont get any complie time error.
+* It seems overriding concept is applicable for static method but it is not Overriding but it is Method Hiding.
+```java
+    class P3{
+        public static void m1(){
+        }
+    }
+    class C3 extends P3{
+        public static void m1(){
+        }
+    }
+```
