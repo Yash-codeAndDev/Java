@@ -18,3 +18,9 @@
 
 * Default  Exception Handler prints exception information and terminates program abnormally.
 
+## Checked and Unchecked Exceptions
+
+* Checked Exception : Exceptions Checked by compiler for smooth execution of Program at Runtime.
+    - Fully Checked : A fully checked exception is an exception for which all its subclasses are also checked exceptions. This means that both the exception and all its possible subclasses must be either caught or declared in the method signature.
+    - Partially Checked :  A partially checked exception is an exception for which only some of its subclasses are checked exceptions. This means that while the exception itself may be checked, it can have subclasses that are unchecked
+* Unchecked Exception: Exceptions which are not checked by compiler at compile time.
