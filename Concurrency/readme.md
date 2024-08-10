@@ -53,3 +53,4 @@
     - It initiates thread execution ,and then jvm invokes run()
     - It also allow thred to scheduled for execution by thread scheduler. 
     - It can be invoked once per object. If we attempt to start a thread that has already been started, the JVM will throw an **IllegalThreadStateException**.
+    - If we Overload run() then start() calls run method with no arguments.
