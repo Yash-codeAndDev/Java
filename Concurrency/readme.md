@@ -18,7 +18,8 @@
 
 
 ### Extending Thread Class
-    ```java
+
+    ```JAVA
         // Thread Definition
         class MyThread extends Thread{
             public void run(){
