@@ -54,3 +54,27 @@
     - It also allow thred to scheduled for execution by thread scheduler. 
     - It can be invoked once per object. If we attempt to start a thread that has already been started, the JVM will throw an **IllegalThreadStateException**.
     - If we Overload run() then start() calls run method with no arguments.
+
+### Implementing Runnable 
+
+```java
+    class MyThread implements Runnable{
+    // Job of Thread
+    public void run(){
+        for(int i=0;i<100;i++){
+            System.out.println("Child Thread");
+            }
+        }
+    }
+
+    public class Demo1 {
+        public static void main(String[] args) {
+            MyThread r = new MyThread();
+            Thread t = new Thread(r);
+            t.start();
+            for(int i=0; i<100; i++){
+                System.out.println("Main Thread");
+            }
+        }
+    }
+```
