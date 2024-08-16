@@ -78,3 +78,11 @@
         }
     }
 ```
+
+### Synchronization
+
+* ***Synchronization*** is the capability to control the access of multiple threads to any shared resource.
+
+    * It is used to prevent 
+        - Thread Interference
+        - Inconsistency Problem          
