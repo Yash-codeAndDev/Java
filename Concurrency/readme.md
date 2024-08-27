@@ -86,3 +86,7 @@
     * It is used to prevent 
         - Thread Interference
         - Inconsistency Problem          
+
+* Synchronized keyword is applicable for bethods and blocks. 
+* Every object in java has a unique lock. If a thread want to execute any synchronized method on the object first it should require the lock of that object. Once a thread got the lock then it is allowed to execute any synchronized method on that object.
+* While a thread executing a synchronized method on the object, then the remaining threads are not allowed to execute any synchronized method on the same object. But the remaining threads are allowed to execute any non-synchronized method on the same object.
