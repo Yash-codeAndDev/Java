@@ -91,6 +91,7 @@
 * Every object in java has a unique lock. If a thread want to execute any synchronized method on the object first it should require the lock of that object. Once a thread got the lock then it is allowed to execute any synchronized method on that object.
 
     ```java
+       
         class Display{
         public synchronized void wish(String name){
             for(int i=0; i<10; i++){
@@ -221,3 +222,54 @@
             }
         }
     ```
+
+* Each instance of a class has its own separate lock, meaning that synchronized methods in one instance do not affect the execution of synchronized methods in another instance. As a result, if you have multiple threads operating on different instances of the same class, the synchronized methods will not prevent concurrent access among those instances. This is because each thread is locking and operating on a different object
+    ```java
+        class Display{
+        public synchronized void wish(String name){
+            for(int i=0; i<10; i++){
+                System.out.print("Good Morning : ");
+                try{
+                    Thread.sleep(1000);
+                }catch(Exception e){
+                    System.out.println("Error "+e);
+                }
+                System.out.println(name);
+               }
+            }
+        }
+        class MyThread implements Runnable{
+            Display obj;
+            String name;
+
+            MyThread(Display d , String name){
+                this.obj = d;
+                this.name = name;
+            }
+
+            public void run(){
+                obj.wish(name);
+            }
+        }
+        public class Demo3 {
+            public static void main(String[] args) {
+                Display disp1 = new Display();
+                Display disp2 = new Display();
+                Display disp3 = new Display();
+                
+                MyThread r1 = new MyThread(disp1, "Dhoni");
+                MyThread r2 = new MyThread(disp2, "Raina");
+                MyThread r3 = new MyThread(disp3, "Kholi");
+
+                Thread t1 = new Thread(r1);
+                Thread t2 = new Thread(r2);
+                Thread t3 = new Thread(r3);
+            
+                t1.start();
+                t2.start();
+                t3.start();
+            } 
+        }
+    ```
+
+* If the synchronized method is static then it will prevent concurrent access among instances i.e different objects and we will see synchronization among the instances.
