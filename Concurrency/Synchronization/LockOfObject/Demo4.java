@@ -10,6 +10,7 @@ class Display2 {
             System.out.println(name);
         }
     }
+
 }
 
 class MyThread2 implements Runnable {

@@ -273,3 +273,5 @@
     ```
 
 * If the synchronized method is static then it will prevent concurrent access among instances i.e different objects and we will see synchronization among the instances.
+    - Class level lock is obtained by thread which is used to coltrol access to static methods or blocks.
+
