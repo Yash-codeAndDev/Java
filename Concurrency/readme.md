@@ -274,11 +274,12 @@
 
 * If the synchronized method is static then it will prevent concurrent access among instances i.e different objects and we will see synchronization among the instances.
     - Class level lock is obtained by thread which is used to coltrol access to static methods or blocks.
-    > [!Note]
-    > If have accquired class level lock and is running then no other thread can access synchronized static methods or synchronized static blocks of the class.
-    > If a thread having class level lock is running then second thread can run the object-level synchronized method even if the first thread is running a class-level synchronized method.
+      
+> [!NOTE]
+> If have accquired class level lock and is running then no other thread can access synchronized static methods or synchronized static blocks of the class.
+> If a thread having class level lock is running then second thread can run the object-level synchronized method even if the first thread is running a class-level synchronized method.
 
-    - ```java
+ ```java
 
         class Display6
         { 
@@ -340,5 +341,5 @@
             }   
         }
 
-      ```
+  ```
 
