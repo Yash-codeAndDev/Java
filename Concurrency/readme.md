@@ -274,4 +274,71 @@
 
 * If the synchronized method is static then it will prevent concurrent access among instances i.e different objects and we will see synchronization among the instances.
     - Class level lock is obtained by thread which is used to coltrol access to static methods or blocks.
+    > [!Note]
+    > If have accquired class level lock and is running then no other thread can access synchronized static methods or synchronized static blocks of the class.
+    > If a thread having class level lock is running then second thread can run the object-level synchronized method even if the first thread is running a class-level synchronized method.
+
+    - ```java
+
+        class Display6
+        { 
+            public static synchronized void dispNum(){
+                for(int i=65; i<75; i++){
+                    System.out.println(Thread.currentThread().getName() + " : " + i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            } 
+            public synchronized  void displayGreet(){
+                for(int i=65; i<75; i++){
+                    System.out.println(Thread.currentThread().getName() +" Greet : " + i );
+                    try {
+                        Thread.sleep(1000);
+                    } catch (Exception e) {
+                        System.out.println(e);
+                    }
+                }
+            }
+        }
+
+        class Mythread6a extends Thread{
+            Display6 d;
+            Mythread6a(Display6 d){
+                this.d = d;
+            }
+            public void run(){
+                d.dispNum();
+            }
+        }
+
+        class Mythread6b extends Thread{
+            Display6 d;
+            Mythread6b(Display6 d){
+                this.d = d;
+            }
+            public void run(){
+                d.displayGreet();
+            }
+        }
+
+        public class Demo6 {
+            public static void main(String[] args) 
+            {    
+                Display6 obj = new Display6();
+                Mythread6a t1 = new Mythread6a(obj);
+                Mythread6a t2 = new Mythread6a(obj);
+                Mythread6a t3 = new Mythread6a(obj);
+                Mythread6b t4 = new Mythread6b(obj);
+
+                t1.start();
+                t2.start();
+                t3.start();
+                t4.start();
+            }   
+        }
+
+      ```
 
