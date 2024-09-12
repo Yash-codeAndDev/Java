@@ -28,3 +28,32 @@
         | `Collection<String> list = new ArrayList<>();`    | `Collections.sort(list);`                         |
 
 
+
+* **List (I)** : It represents an ordered collection of elements(Objects)
+    - Lists allow duplicate elements 
+    - List maintains the order of insertion
+    - List elements can be accessed by their index, starting from 0
+    - Lists allow null elements, depending on the specific implementation
+
+
+    * **ArrayList** is implementation of the List interface. It is a resizable array that grows dynamically as elements are added.
+        - Provides O(1) time complexity for accessing elements by index.
+        - Operations that involve inserting or removing elements (especially in the middle) are slower, as elements need to be shifted.
+        - ArrayList is not thread-safe. If multiple threads access an ArrayList concurrently, you need to synchronize it manually
+    
+    * **LinkedList** is implementation of the List interface but it is implemented as a doubly linked list.
+        - Insertion and deletion are fast (O(1)) 
+        - Accessing elements by index takes O(n) time
+        - LinkedList is not thread-safe and requires synchronization if accessed by multiple threads concurrently
+        
+
+    | Feature                | `ArrayList`                         | `LinkedList`                        |
+    |------------------------|-------------------------------------|-------------------------------------|
+    | **Underlying Data Structure** | Dynamic array                         | Doubly linked list                   |
+    | **Random Access**       | Fast (O(1))                          | Slow (O(n))                          |
+    | **Insertion (Middle)**  | Slow (O(n))                          | Fast (O(1))                          |
+    | **Deletion (Middle)**   | Slow (O(n))                          | Fast (O(1))                          |
+    | **Memory Usage**        | Less memory (array-based)            | More memory (due to node references) |
+    | **Use Case**            | Best when random access is important | Best when frequent insertions/deletions are needed |
+    | **Thread Safety**       | Non-synchronized                     | Non-synchronized                     |
+
