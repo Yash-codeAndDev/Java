@@ -343,3 +343,4 @@
 
   ```
 
+* **Synchronized Block** : Synchronized Block allows you to synchronize only a portion of your code rather than the entire method. It provides more fine-tuned control over synchronization by allowing you to lock a specific object (or class) for only a critical section of code rather than locking the entire method.
