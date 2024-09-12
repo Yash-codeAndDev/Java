@@ -25,6 +25,5 @@
 | Defines methods for basic operations like `add()`, `remove()`, `size()` | Provides static methods like `sort()`, `reverse()`, `shuffle()`, `min()`, `max()` |
 | Used to create a collection of objects (e.g., `List`, `Set`, etc.) | Used to perform operations on collections like sorting or searching |
 | `Collection<String> list = new ArrayList<>();`    | `Collections.sort(list);`                         |
-| Yes, it can hold elements (when implemented by a class) | No, it only provides utility functions for collections |
 
 
