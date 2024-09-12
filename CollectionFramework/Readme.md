@@ -6,6 +6,7 @@
 
 * **Collection Framework Interfaces and Classes**
 
+    ![Logo](CollectionFramework.png)
 
     - *Collection (I)* : If we want to  represents group of individual objects as a single enitiy.
 
