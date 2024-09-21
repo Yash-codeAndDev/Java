@@ -368,8 +368,17 @@
 
             ```
 
-
-
+    2. **Class-Level Synchronization**
+        - This synchronization locks the class object rather than an instance. It ensures that only one thread can execute any of the synchronized static methods or blocks for that class.
+        - It’s useful when threads are interacting with static variables or static methods.
+        - ```java
+                public static void someStaticMethod() {
+                    synchronized(SomeClass.class) {
+                        // critical section
+                    }
+                }
+                
+            ```
 
 
 
