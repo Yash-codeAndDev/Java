@@ -344,3 +344,37 @@
   ```
 
 * **Synchronized Block** : Synchronized Block allows you to synchronize only a portion of your code rather than the entire method. It provides more fine-tuned control over synchronization by allowing you to lock a specific object (or class) for only a critical section of code rather than locking the entire method.
+
+*  Java provides two types of synchronization: instance-level synchronization and class-level synchronization.
+
+    1. **Instance-Level Synchronization** : 
+        - This synchronization is used to lock the instance of the class. Only one thread can execute code synchronized on the same instance at a time.
+        - It’s useful when multiple threads are accessing the same instance of an object.
+
+        - ```java
+                    public void someMethod() {
+                    synchronized(this) {
+                    // critical section
+                    }
+                }
+            ```
+        - ```java
+                /* synchronization for particular object */
+                public void someMethod(Object obj){
+                    synchronized(obj) {
+                    // critical section
+                    }
+                }
+
+            ```
+
+
+
+
+
+
+
+
+
+
+
