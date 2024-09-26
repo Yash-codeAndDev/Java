@@ -36,12 +36,12 @@
     - Lists allow null elements, depending on the specific implementation
 
 
-    * **ArrayList** is implementation of the List interface. It is a resizable array that grows dynamically as elements are added.
+    * **ArrayList :** is implementation of the List interface. It is a resizable array that grows dynamically as elements are added.
         - Provides O(1) time complexity for accessing elements by index.
         - Operations that involve inserting or removing elements (especially in the middle) are slower, as elements need to be shifted.
         - ArrayList is not thread-safe. If multiple threads access an ArrayList concurrently, you need to synchronize it manually
     
-    * **LinkedList** is implementation of the List interface but it is implemented as a doubly linked list.
+    * **LinkedList :** is implementation of the List interface but it is implemented as a doubly linked list.
         - Insertion and deletion are fast (O(1)) 
         - Accessing elements by index takes O(n) time
         - LinkedList is not thread-safe and requires synchronization if accessed by multiple threads concurrently
@@ -57,3 +57,18 @@
     | **Use Case**            | Best when random access is important | Best when frequent insertions/deletions are needed |
     | **Thread Safety**       | Non-synchronized                     | Non-synchronized                     |
 
+
+
+* **Set(I)** : This can be used for representing a group of Individual objects where insertion order is not preserved and duplicate objects are not allowed.
+    - Set interface is child interface of Collection.
+    - This interface doesn’t contain any new method and we have to use only collection Interface methods
+
+    - A Set cannot contain duplicate elements.
+    - Elements in a Set are generally unordered, meaning the order of elements in a Set is not guaranteed. However, specific implementations like LinkedHashSet maintain the order of insertion.
+    - Most Set implementations allow at most one null element
+
+    - **HashSet :**  Implements the Set interface using a hash table.
+        - Insertion order is not preserved and it is based on has code of the Object.
+        - Duplicate objects are not allowed
+        - HashSet allows null value
+        
