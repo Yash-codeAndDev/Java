@@ -380,10 +380,9 @@
                 
             ```
 
+### InterThread Communication
 
-
-
-
-
-
+* **Inter-thread communication** is a mechanism that allows threads to communicate with each other and coordinate their actions. This is primarily used in situations where one thread needs to wait for some condition to be fulfilled by another thread.
+    - Java provides a way for threads to communicate via shared objects using the wait(), notify(), and notifyAll() methods, which are part of the Object class.
+    - These methods are used to manage thread synchronization in a more controlled way, rather than busy waiting or polling.
 
