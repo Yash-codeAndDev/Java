@@ -71,4 +71,22 @@
         - Insertion order is not preserved and it is based on has code of the Object.
         - Duplicate objects are not allowed
         - HashSet allows null value
-        
+
+    - **LinkedHashSet :** is the child class of HashSet which uses a combination of a hash table and a linked list. 
+        - Unlike HashSet, LinkedHashSet maintains a doubly-linked list across all elements, ensuring that the *iteration order is the same as the insertion order*
+        - does not allow duplicates
+        - allows one null value insertion.
+        -   | Feature               | **HashSet**                              | **LinkedHashSet**                           |
+            |-----------------------|------------------------------------------|---------------------------------------------|
+            | **Ordering**          | Unordered (no guarantee of order)       | Maintains insertion order                   |
+            | **Performance**       | Faster (`O(1)` for basic operations)    | Slightly slower than `HashSet` (`O(1)` with overhead) |
+            | **Duplicates**        | No duplicates allowed                    | No duplicates allowed                       |
+            | **Null Values**       | Allows at most one `null` value         | Allows at most one `null` value            |
+            | **Internal Structure**| Backed by a hash table                   | Backed by both a hash table and a linked list |
+            | **Usage Scenario**    | When order is not important              | When insertion order needs to be preserved  |
+            | **Iteration**         | No guaranteed order during iteration     | Predictable iteration order based on insertion |
+            | **Memory Overhead**   | Less memory overhead                     | More memory overhead due to linked list    |
+
+
+
+
